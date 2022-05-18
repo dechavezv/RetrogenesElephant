@@ -13,9 +13,9 @@ echo '#########'
 echo 'Bedtools_Fasta'
 echo '#########'
 
-export Dir=/scratch/dc2656/Lisa.Marc.Daniel/data/Loxodonta/Loxodonta.Hap1.By.Chr/Bams
+export Dir=/scratch/dc2656/Lisa.Marc.Daniel/data/Loxodonta/Loxodonta.Hap1.By.Chr/Fasta
 export Fasta=/scratch/dc2656/Loxodonta.Hap1.CHROMOSOMES.fa
-export neutral=neutral.bed
+export Bed=/scratch/dc2656/Lisa.Marc.Daniel/data/Loxodonta/Retrogenes.bed
 export bedtools=/projects/tollis_lab/programs/bedtools2/bin/bedtools
 
-${bedtools} getfasta -name -fi ${Fasta} -bed ${Dir}/${neutral} -fo ${Dir}/retrogene1_Loxodonta.fa
+${bedtools} getfasta -name -fi ${Fasta} -bed ${Bed} -fo ${Dir}/Retrogenes_Loxodonta.fa
