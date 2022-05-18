@@ -28,3 +28,10 @@ You can find a list of retrogenes and Scaffolds here in Table1  https://elifesci
 	   For this refer to the table in Abegglen et al 2015 from SI eTable2
 	   For NCBI use the Gene ID column. For Ensmble-Biomart use the Ensembl ID column
 	   
+
+Get retrogenes from Loxodonta  
+Once you have determinated the position of retroges 
+You can pulled out the genes with bedtools 
+``` sbatch GetFasta.sh  ```
+If desired split the fasta file per retrogene with the following
+```for line in $(grep '>' Retrogenes_Loxodonta.fa ); do ( file=$(printf $line | perl -pe 's/>(Retrogene\d+)\:.*/\1_Lox.fa/g' ) && grep -A1 $line Retrogenes_Loxodonta.fa > $file) ;done```
